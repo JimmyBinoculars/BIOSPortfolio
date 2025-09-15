@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'ibm-dos-vga';
+    src: url(../fonts/ibm-dos-vga-9x16.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ibm-dos-vga', sans-serif;
+    background-color: rgb(180, 181, 175);
+    margin: 0;
+    padding: 0;
+}
+
+#top-info {
+    width: 100%;
+    height: 3.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(1, 0, 251);
+    padding: 0;
+}
+
+#top-info h3 {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
