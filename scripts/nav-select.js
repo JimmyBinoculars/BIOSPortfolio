@@ -12,10 +12,6 @@ document.addEventListener('keydown', (e) => {
         currentIndex = (currentIndex + 1) % options.length;
     } else if (e.key === 'ArrowLeft') {
         currentIndex = (currentIndex - 1 + options.length) % options.length;
-    } else if (e.key === 'ArrowDown') {
-        currentIndex = Math.min(currentIndex + 1, options.length - 1);
-    } else if (e.key === 'ArrowUp') {
-        currentIndex = Math.max(currentIndex - 1, 0);
     }
 
     // Add selection to the new current option
