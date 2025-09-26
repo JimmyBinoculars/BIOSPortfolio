@@ -68,13 +68,13 @@ body {
 
 .content{
     flex: 1;
+    border: 0.25vw solid black;
+    margin: 1vw;
+    padding: 1vw;
 }
 
 #main-page {
-    overflow: hidden;
-    margin: 1vw;
-    padding: 1vw;
-    border: 0.25vw solid black;
+    overflow: hidden;    
 }
 
 .content-selectable {
