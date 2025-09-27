@@ -58,24 +58,36 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const mainPage = document.getElementById('main-page');
     const skillsPage = document.getElementById('skills-page');
-    let currentPage = 0; // 0 = main, 1 = skills
+    const portfolioPage = document.getElementById('portfolio-page');
+    let currentPage = 0; // 0 = main, 1 = skills, 2 = portfolio
 
     function showPage(page) {
         if (page === 0) {
             mainPage.style.display = '';
             skillsPage.style.display = 'none';
-        } else {
+            portfolioPage.style.display = 'none';
+        }
+        if (page === 1) {
             mainPage.style.display = 'none';
             skillsPage.style.display = '';
+            portfolioPage.style.display = 'none';
+        }
+        if (page === 2) {
+            mainPage.style.display = 'none';
+            skillsPage.style.display = 'none';
+            portfolioPage.style.display = '';
         }
     }
 
-    // Initialize: show main, hide skills
+    // Initialize: show main, hide skills and portfolio
     showPage(currentPage);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-            currentPage = 1 - currentPage; // Toggle between 0 and 1
+        if (e.key === 'ArrowRight') {
+            currentPage = (currentPage + 1) % 3; // Cycle forward through 0,1,2
+            showPage(currentPage);
+        } else if (e.key === 'ArrowLeft') {
+            currentPage = (currentPage - 1 + 3) % 3; // Cycle backward through 2,1,0
             showPage(currentPage);
         }
     });
